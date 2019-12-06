@@ -35,7 +35,7 @@ class ResultsList extends Component {
 				</header>
 				<ul style={resultsStyle}>
 					{results.map(result => 
-						<li style={liStyle} key="result.key">
+						<li style={liStyle} key={result.key}>
 							<Result name={result.name} />
 						</li>
 					)}

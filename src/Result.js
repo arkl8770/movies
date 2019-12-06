@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 
 
 class Result extends Component {
-	constructor(props) {
-		super(props);
-	};
 	render() {
 		var resultStyle={
 			width: "150px",
