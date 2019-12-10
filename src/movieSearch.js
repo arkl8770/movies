@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import 'SearchForm.js';
+// import React, {Component} from 'react';
+// import 'SearchForm.js';
 
-class movieSearch extends Component{
+// class movieSearch extends Component{
 
-	constructor(props){
-		super(props);
+// 	constructor(props){
+// 		super(props);
 
-		this.state = {
-			movie: {}
-		};
-	}
-}
+// 		this.state = {
+// 			movie: {}
+// 		};
+// 	}
+// }

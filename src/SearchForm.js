@@ -1,44 +1,53 @@
-import React, {Component} from 'react';
-import 'movieSearch';
+import React, {Component} from "react";
+// import "movieSearch";
 
 
 
 class SearchForm extends Component {
+	constructor(props) {
+		super(props);
+
+		this.handleYearChange = this.handleYearChange.bind(this);
+		this.handleSearch = this.handleSearch.bind(this);
+	}
+
+	handleSearch() {
+		this.props.searchByYear();
+	}
+
+	handleYearChange(e) {
+		this.props.handleYearChange(e.target.value);
+	}
 
 	render() {
 		return(
-			<form id="search-form" className="form">
+
+			<form onSubmit={e => { e.preventDefault(); }} id="search-form" className="form">
 				<div className="form-group genre-group">
 					<label htmlFor="genre">Genre:</label>
-					<select className="form-control" id="genre">
-						<option>Comedy</option>
-						<option>Sci-Fi</option>
-						<option>Horror</option>
-						<option>Romance</option>
-						<option>Action</option>
-						<option>Thriller</option>
-						<option>Drama</option>
-						<option>Mystery</option>
-						<option>Crime</option>
-						<option>Animation</option>
-						<option>Adventure</option>
-						<option>Fantasy</option>
-						<option>Comedy-Romance</option>
-						<option>Action-Comedy</option>
-						<option>Superhero</option>
+					<select className="form-control" id="genre" disabled>
+						<option value="">Choose a genre...</option>
+						<option value="">Comedy</option>
+						<option value="">Sci-Fi</option>
+						<option value="">Horror</option>
+						<option value="">Romance</option>
+						<option value="">Action</option>
+						<option value="">Thriller</option>
+						<option value="">Drama</option>
+						<option value="">Mystery</option>
+						<option value="">Crime</option>
+						<option value="">Animation</option>
+						<option value="">Adventure</option>
+						<option value="">Fantasy</option>
+						<option value="">Comedy-Romance</option>
+						<option value="">Action-Comedy</option>
+						<option value="">Superhero</option>
 					</select>
 				</div>
 
-
-
-
-
-
-
-
 				<div className="form-group year-group">
 					<label htmlFor="yearOfRelease">Year of Release:</label>
-					<input type="number" className="form-control" id="yearOfRelease" max="2019" min="1874" placeholder="e.g. 2019"/>
+					<input onChange={this.handleYearChange} type="number" className="form-control" id="yearOfRelease" max="2019" min="1874" placeholder="e.g. 2019" />
 				</div>
 
 				<div className="form-group type-group">
@@ -56,7 +65,7 @@ class SearchForm extends Component {
 					</div>
 				</div>
 
-				<button type="button" id="search" className="btn btn-primary">Search</button>
+				<button onClick={this.handleSearch} type="button" id="search" className="btn btn-primary">Search</button>
 			</form>
 		);
 	}
