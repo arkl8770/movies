@@ -27,6 +27,8 @@ class SearchForm extends Component {
 					<label htmlFor="title">Title:</label>
 					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
 				</div>
+				<div className="or">Or</div>
+				<br/>
 				<div className="form-group genre-group">
 					<label htmlFor="genre">Genre:</label>
 					<select className="form-control" id="genre" disabled>

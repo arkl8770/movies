@@ -56,7 +56,7 @@ import ResultsList from './ResultsList.js';
 		
 	}
 
-	handleTitleChange(year) {
+	handleTitleChange(title) {
 		this.setState({ title: title });
 	}
 
