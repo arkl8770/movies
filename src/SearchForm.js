@@ -19,6 +19,14 @@ class SearchForm extends Component {
 		this.props.handleYearChange(e.target.value);
 	}
 
+	handleTitleChange(e) {
+		this.props.handleTitleChange(e.target.value);
+	}
+
+	handleActorChange(e) {
+		this.props.handleActorChange(e.target.value);
+	}
+
 	render() {
 		return(
 
