@@ -12,7 +12,16 @@ class SearchForm extends Component {
 	}
 
 	handleSearch() {
-		this.props.searchByYear();
+
+		if(this.props.title === ""){
+			console.log(this.props.title);
+		}
+		else{
+			console.log(this.props.title);
+		}
+
+
+		// this.props.searchByYear();
 	}
 
 	handleYearChange(e) {

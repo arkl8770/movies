@@ -10,7 +10,8 @@ import ResultsList from './ResultsList.js';
  		super();
  		this.state = {
  			results: [],
- 			year: 0
+ 			year: 0,
+ 			title: ""
  		};
 
  		this.searchByYear = this.searchByYear.bind(this);
@@ -56,7 +57,7 @@ import ResultsList from './ResultsList.js';
 		
 	}
 
-	handleTitleChange(year) {
+	handleTitleChange(title) {
 		this.setState({ title: title });
 	}
 
