@@ -2,14 +2,17 @@ import React from 'react';
 import './App.css';
 import SearchForm from './SearchForm.js';
 import ResultsList from './ResultsList.js';
+import movieSearch from './movieSearch.js';
 
 
-function App() {
+ function App() {
   return (
     <div className="App">
       <header className="header">
         <h1>Welcome to Movie Matchmaker.</h1>
       </header>
+
+      <movieSearch />
 
       <SearchForm />
 

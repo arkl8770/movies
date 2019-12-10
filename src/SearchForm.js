@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import 'movieSearch';
 
 
 
 class SearchForm extends Component {
+
 	render() {
 		return(
 			<form id="search-form" className="form">
@@ -26,6 +28,13 @@ class SearchForm extends Component {
 						<option>Superhero</option>
 					</select>
 				</div>
+
+
+
+
+
+
+
 
 				<div className="form-group year-group">
 					<label htmlFor="yearOfRelease">Year of Release:</label>

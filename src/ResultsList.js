@@ -3,7 +3,6 @@ import Result from './Result.js';
 
 
 
-
 class ResultsList extends Component {
 	render() {
 		const results = [
