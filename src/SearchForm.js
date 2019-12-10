@@ -25,7 +25,7 @@ class SearchForm extends Component {
 			<form onSubmit={e => { e.preventDefault(); }} id="search-form" className="form">
 				<div className="form-group title-group">
 					<label htmlFor="title">Title:</label>
-					<input type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
+					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
 				</div>
 				<div className="form-group genre-group">
 					<label htmlFor="genre">Genre:</label>
