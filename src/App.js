@@ -19,7 +19,18 @@ import ResultsList from './ResultsList.js';
  		this.handleYearChange = this.handleYearChange.bind(this);
  	}
 
- 	searchByYear() {
+	searchByMovie() {
+
+		const key = "706733eb15b955d867b9853c3b840e78";
+		fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
+		.then(response => response.json())
+		.then((responseJson) => {
+			this.setState({ results: responseJson.results });
+		})
+		.catch(error => console.log(error));
+	}
+
+ 	searchByTitle() {
 
 		const key = "706733eb15b955d867b9853c3b840e78";
 
@@ -36,22 +47,9 @@ import ResultsList from './ResultsList.js';
 
 		// console.log(this.state.results);
 	}
-
-	searchByMovie() {
-
-		const key = "706733eb15b955d867b9853c3b840e78";
-		fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
-		.then(response => response.json())
-		.then((responseJson) => {
-			this.setState({ results: responseJson.results });
-		})
-		.catch(error => console.log(error));
-	}
-
 	// searchBuild() {
 		
 	// }
-
 
 	handleYearChange(year) {
 		this.setState({ year: year });
@@ -72,7 +70,7 @@ import ResultsList from './ResultsList.js';
 		    		<h1>Welcome to Movie Matchmaker.</h1>
 		    	</header>
 
-		    	<SearchForm searchByYear={this.searchByYear} handleYearChange={this.handleYearChange} />
+		    	<SearchForm searchByMovie={this.searchByYear} handleYearChange={this.handleYearChange} handleActorChange={this.handleActorChange} handleGenreChange={this.handleGenreChange} searchByTitle={this.searchByTitle}/>
 
 		    	<ResultsList results={this.state.results} />
 		    </div>
