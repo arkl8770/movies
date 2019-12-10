@@ -52,11 +52,8 @@ import ResultsList from './ResultsList.js';
 
 
 	handleYearChange(year) {
-		this.setState({ year: year })
-	}
-
-	handleTitleChange(title) {
-		this.setState({ title: title })
+		this.setState({ year: year });
+		
 	}
 
  	render() {
