@@ -35,6 +35,22 @@ import ResultsList from './ResultsList.js';
 		// console.log(this.state.results);
 	}
 
+	searchByMovie() {
+
+		const key = "706733eb15b955d867b9853c3b840e78";
+		fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
+		.then(response => response.json())
+		.then((responseJson) => {
+			this.setState({ results: responseJson.results });
+		})
+		.catch(error => console.log(error));
+	}
+
+	// searchBuild() {
+		
+	// }
+
+
 	handleYearChange(year) {
 		this.setState({ year: year })
 	}

@@ -27,21 +27,21 @@ class SearchForm extends Component {
 					<label htmlFor="genre">Genre:</label>
 					<select className="form-control" id="genre" disabled>
 						<option value="">Choose a genre...</option>
-						<option value="">Comedy</option>
-						<option value="">Sci-Fi</option>
-						<option value="">Horror</option>
-						<option value="">Romance</option>
-						<option value="">Action</option>
-						<option value="">Thriller</option>
-						<option value="">Drama</option>
-						<option value="">Mystery</option>
-						<option value="">Crime</option>
-						<option value="">Animation</option>
-						<option value="">Adventure</option>
-						<option value="">Fantasy</option>
-						<option value="">Comedy-Romance</option>
-						<option value="">Action-Comedy</option>
-						<option value="">Superhero</option>
+						<option value="35">Comedy</option>
+						<option value="878">Sci-Fi</option>
+						<option value="27">Horror</option>
+						<option value="10749">Romance</option>
+						<option value="28">Action</option>
+						<option value="53">Thriller</option>
+						<option value="18">Drama</option>
+						<option value="9648">Mystery</option>
+						<option value="80">Crime</option>
+						<option value="16">Animation</option>
+						<option value="12">Adventure</option>
+						<option value="14">Fantasy</option>
+						<option value="37">Western</option>
+						<option value="10752">War</option>
+						<option value="10751">Family</option>
 					</select>
 				</div>
 
