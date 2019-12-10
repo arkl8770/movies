@@ -56,6 +56,10 @@ import ResultsList from './ResultsList.js';
 		
 	}
 
+	handleTitleChange(year) {
+		this.setState({ title: title });
+	}
+
  	render() {
 		return (
 		    <div className="App">
