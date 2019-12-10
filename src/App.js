@@ -61,6 +61,9 @@ import ResultsList from './ResultsList.js';
 		this.setState({ title: title });
 	}
 
+	handleActorChange(actor) {
+		this.setState({ actor: actor });
+	}
  	render() {
 		return (
 		    <div className="App">

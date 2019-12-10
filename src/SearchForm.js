@@ -28,6 +28,14 @@ class SearchForm extends Component {
 		this.props.handleYearChange(e.target.value);
 	}
 
+	handleTitleChange(e) {
+		this.props.handleTitleChange(e.target.value);
+	}
+
+	handleActorChange(e) {
+		this.props.handleActorChange(e.target.value);
+	}
+
 	render() {
 		return(
 
@@ -36,6 +44,8 @@ class SearchForm extends Component {
 					<label htmlFor="title">Title:</label>
 					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
 				</div>
+				<div className="or">Or</div>
+				<br/>
 				<div className="form-group genre-group">
 					<label htmlFor="genre">Genre:</label>
 					<select className="form-control" id="genre" disabled>
@@ -57,7 +67,10 @@ class SearchForm extends Component {
 						<option value="10751">Family</option>
 					</select>
 				</div>
-
+				<div className="form-group actor-group">
+					<label htmlFor="actor">Actor:</label>
+					<input onChange={this.handleActorChange} type="text" className="form-control" id="movieActor" placeholder="e.g. Robert Downey Jr."/>
+				</div>
 				<div className="form-group year-group">
 					<label htmlFor="yearOfRelease">Year of Release:</label>
 					<input onChange={this.handleYearChange} type="number" className="form-control" id="yearOfRelease" max="2019" min="1874" placeholder="e.g. 2019" />
