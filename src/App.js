@@ -15,8 +15,14 @@ import ResultsList from './ResultsList.js';
  			actor: ""
  		};
 
- 		this.searchByYear = this.searchByYear.bind(this);
+ 		this.searchByMovie = this.searchByMovie.bind(this);
+ 		this.searchByTitle = this.searchByTitle.bind(this);
+
  		this.handleYearChange = this.handleYearChange.bind(this);
+ 		this.handleActorChange = this.handleActorChange.bind(this);
+ 		this.handleGenreChange = this.handleGenreChange.bind(this);
+
+ 		this.handleTitleChange = this.handleTitleChange.bind(this);
  	}
 
 	searchByMovie() {
@@ -52,8 +58,7 @@ import ResultsList from './ResultsList.js';
 	// }
 
 	handleYearChange(year) {
-		this.setState({ year: year });
-		
+		this.setState({ year: year });	
 	}
 
 	handleTitleChange(title) {
@@ -63,6 +68,9 @@ import ResultsList from './ResultsList.js';
 	handleActorChange(actor) {
 		this.setState({ actor: actor });
 	}
+	handleGenreChange(genre) {
+		this.stateState({ genre: genre });
+	}
  	render() {
 		return (
 		    <div className="App">
@@ -70,7 +78,7 @@ import ResultsList from './ResultsList.js';
 		    		<h1>Welcome to Movie Matchmaker.</h1>
 		    	</header>
 
-		    	<SearchForm searchByMovie={this.searchByYear} handleYearChange={this.handleYearChange} handleActorChange={this.handleActorChange} handleGenreChange={this.handleGenreChange} searchByTitle={this.searchByTitle}/>
+		    	<SearchForm searchByMovie={this.searchByMovie} handleYearChange={this.handleYearChange} handleActorChange={this.handleActorChange} handleGenreChange={this.handleGenreChange} searchByTitle={this.searchByTitle}/>
 
 		    	<ResultsList results={this.state.results} />
 		    </div>
