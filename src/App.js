@@ -11,7 +11,8 @@ import ResultsList from './ResultsList.js';
  		this.state = {
  			results: [],
  			year: 0,
- 			title: ""
+ 			title: "",
+ 			actor: ""
  		};
 
  		this.searchByYear = this.searchByYear.bind(this);
