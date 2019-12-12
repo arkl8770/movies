@@ -15,14 +15,43 @@ import ResultsList from './ResultsList.js';
  			actor: ""
  		};
 
- 		this.searchByYear = this.searchByYear.bind(this);
+ 		this.searchByMovie = this.searchByMovie.bind(this);
+ 		this.searchByTitle = this.searchByTitle.bind(this);
+
  		this.handleYearChange = this.handleYearChange.bind(this);
 
+
  		this.searchByTitle = this.searchByTitle.bind(this);
+
+ 		this.handleActorChange = this.handleActorChange.bind(this);
+ 		this.handleGenreChange = this.handleGenreChange.bind(this);
+
+
  		this.handleTitleChange = this.handleTitleChange.bind(this);
  	}
 
- 	searchByYear() {
+	searchByMovie() {
+
+		const key = "706733eb15b955d867b9853c3b840e78";
+		fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
+		.then(response => response.json())
+		.then((responseJson) => {
+			this.setState({ results: responseJson.results });
+		})
+		.catch(error => console.log(error));
+	}
+
+
+	searchByTitle() {
+
+		const key = "706733eb15b955d867b9853c3b840e78";
+
+		fetch("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + this.state.title + "&page=1&include_adult=false")
+		.then(response => response.json())
+		.then((responseJson) => {
+			this.setState({ results2: responseJson.results2 });
+
+ 	searchByTitle() {
 
 		const key = "706733eb15b955d867b9853c3b840e78";
 
@@ -33,43 +62,37 @@ import ResultsList from './ResultsList.js';
 		.then(response => response.json())
 		.then((responseJson) => {
 			this.setState({ results: responseJson.results });
+
 			// console.log(responseJson.results);
 		})
 		.catch(error => console.log(error));
 
 		// console.log(this.state.results);
 	}
-
-	searchByTitle() {
-
-		const key = "706733eb15b955d867b9853c3b840e78";
-
-		fetch("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + this.state.title + "&page=1&include_adult=false")
-		.then(response => response.json())
-		.then((responseJson) => {
-			this.setState({ results2: responseJson.results2 });
-			// console.log(responseJson.results);
-		})
-		.catch(error => console.log(error));
-	}
-
 	// searchBuild() {
 		
 	// }
 
-
 	handleYearChange(year) {
-		this.setState({ year: year });
-		
+		this.setState({ year: year });	
 	}
 
 	handleTitleChange(title) {
 		this.setState({ title: title });
 	}
 
+
 	// handleActorChange(actor) {
 	// 	this.setState({ actor: actor });
 	// }
+
+	handleActorChange(actor) {
+		this.setState({ actor: actor });
+	}
+	handleGenreChange(genre) {
+		this.stateState({ genre: genre });
+	}
+
  	render() {
 		return (
 		    <div className="App">
@@ -77,7 +100,10 @@ import ResultsList from './ResultsList.js';
 		    		<h1>Welcome to Movie Matchmaker.</h1>
 		    	</header>
 
+
 		    	<SearchForm searchByYear={this.searchByYear} handleYearChange={this.handleYearChange} searchByTitle={this.searchByTitle} handleTitleChange={this.handleTitleChange}/>
+
+		    	<SearchForm searchByMovie={this.searchByMovie} handleYearChange={this.handleYearChange} handleActorChange={this.handleActorChange} handleGenreChange={this.handleGenreChange} searchByTitle={this.searchByTitle}/>
 
 		    	<ResultsList results={this.state.results} />
 		    </div>
