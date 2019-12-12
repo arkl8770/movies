@@ -6,14 +6,13 @@ class SearchForm extends Component {
 	constructor(props) {
 		super(props);
 
-		//this.handleSearch = this.handleSearch.bind(this);
-		//this.handleSearch2 = this.handleSearch2.bind(this);
 		this.handleYearChange = this.handleYearChange.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.handleTitleSearch = this.handleTitleSearch.bind(this);
 		this.handleDiscoverSearch = this.handleDiscoverSearch.bind(this);
 		this.handleGenreChange = this.handleGenreChange.bind(this);
-	}
+		this.handleRatingChange = this.handleRatingChange.bind(this);
+	};
 
 	handleGenreChange(e) {
 		this.props.handleGenreChange(e.target.value);
@@ -24,11 +23,13 @@ class SearchForm extends Component {
 
 	}
 
+
 	handleTitleSearch() {
 		this.props.searchByTitle();
 	}
 
 		handleYearChange(e) {
+			console.log(e);
 			this.props.handleYearChange(e.target.value);
 			console.log(e.target.value);
 		};
@@ -37,13 +38,14 @@ class SearchForm extends Component {
 			this.props.handleTitleChange(e.target.value);
 			console.log(e.target.value);
 		};
-	// handleActorChange(e) {
-	// 	this.props.handleActorChange(e.target.value);
-	// }
 
-	handleGenreChange(e) {
-		this.props.handleGenreChange(e.target.value);
-	}
+		handleRatingChange(e) {
+			console.log(e);
+			this.props.handleRatingChange(e.target.value);
+			console.log(e.target.value);
+		};
+
+
 
 	render() {
 
@@ -79,9 +81,9 @@ class SearchForm extends Component {
 						<option value="10751">Family</option>
 					</select>
 				</div>
-				<div className="form-group actor-group">
-					<label htmlFor="actor">Actor:</label>
-					<input onChange={this.handleActorChange} type="text" className="form-control" id="movieActor" placeholder="e.g. Robert Downey Jr."/>
+				<div className="form-group year-group">
+					<label htmlFor="voteAverage">Rating:</label>
+					<input onChange={this.handleRatingChange} type="number" className="form-control" id="voteAverage" max="10" min="0" placeholder="e.g. 10" />
 				</div>
 				<div className="form-group year-group">
 					<label htmlFor="yearOfRelease">Year of Release:</label>
