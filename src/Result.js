@@ -34,10 +34,6 @@ class Result extends Component {
 					<div style={overviewStyle}>{this.props.overview}</div>
 					<div style={titleStyle}>{this.props.title}</div>
 				</div>
-				<div style={resultStyle} className="result2">
-					<div style={overviewStyle}>{this.props.overview}</div>
-					<div style={titleStyle}>{this.props.title}</div>
-				</div>
 			</div>
 		);
 	}

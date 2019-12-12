@@ -6,7 +6,8 @@ class SearchForm extends Component {
 	constructor(props) {
 		super(props);
 
-
+		this.handleSearch = this.handleSearch.bind(this);
+		this.handleSearch2 = this.handleSearch2.bind(this);
 		this.handleYearChange = this.handleYearChange.bind(this);
 		this.handleSearch = this.handleSearch.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -33,7 +34,7 @@ class SearchForm extends Component {
 		//this.props.searchByTitle();
 	}
 	handleSearch2() {
-
+		console.log("in search 2");
 		// console.log(this.props.title);
 		// this.props.searchByTitle();
 
@@ -45,8 +46,7 @@ class SearchForm extends Component {
 		// 	//console.log(this.props.title);
 		// 	this.props.searchByTitle();
 		// }
-
-		//console.log(this.props.title);
+		console.log(this.props.title);
 		this.props.searchByTitle();
 		//this.props.searchByTitle();
 	}
@@ -75,9 +75,10 @@ class SearchForm extends Component {
 			<form onSubmit={e => { e.preventDefault(); }} id="search-form" className="form">
 				<div className="form-group title-group">
 					<label htmlFor="title">Title:</label>
-					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" value="Avengers" placeholder="e.g. Avengers"/>
+					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
 				</div>
 				<button onClick={this.handleSearch2} type="button" id="search" className="btn btn-primary">Search</button>
+
 				<div className="or">Or</div>
 				<br/>
 				<div className="form-group genre-group">
@@ -110,20 +111,6 @@ class SearchForm extends Component {
 					<input onChange={this.handleYearChange} type="number" className="form-control" id="yearOfRelease" max="2019" min="1874" placeholder="e.g. 2019" />
 				</div>
 
-				<div className="form-group type-group">
-					<div className="form-check-inline">
-					  <input className="form-check-input" type="radio" name="type" id="movie" value="movie"/>
-					  <label className="form-check-label" htmlFor="movie">Movie</label>
-					</div>
-					<div className="form-check-inline">
-					  <input className="form-check-input" type="radio" name="type" id="series" value="series"/>
-					  <label className="form-check-label" htmlFor="series">Series</label>
-					</div>
-					<div className="form-check-inline">
-					  <input className="form-check-input" type="radio" name="type" id="episode" value="episode"/>
-					  <label className="form-check-label" htmlFor="episode">Episode</label>
-					</div>
-				</div>
 
 				<button onClick={this.handleSearch} type="button" id="search" className="btn btn-primary">Search</button>
 			</form>

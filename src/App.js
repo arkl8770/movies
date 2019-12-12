@@ -15,8 +15,8 @@ import ResultsList from './ResultsList.js';
  			actor: ""
  		};
 
- 		this.searchByMovie = this.searchByMovie.bind(this);
  		this.searchByTitle = this.searchByTitle.bind(this);
+ 		this.searchByYear = this.searchByYear.bind(this);
 
  		this.handleYearChange = this.handleYearChange.bind(this);
 
@@ -29,29 +29,27 @@ import ResultsList from './ResultsList.js';
 
  		this.handleTitleChange = this.handleTitleChange.bind(this);
  	}
+		//fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
 
-	searchByMovie() {
+
+ 	searchByTitle() {
 
 		const key = "706733eb15b955d867b9853c3b840e78";
+
 		fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
+		
 		.then(response => response.json())
 		.then((responseJson) => {
 			this.setState({ results: responseJson.results });
+
+			// console.log(responseJson.results);
 		})
 		.catch(error => console.log(error));
+
+		// console.log(this.state.results);
 	}
 
-
-	searchByTitle() {
-
-		const key = "706733eb15b955d867b9853c3b840e78";
-
-		fetch("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + this.state.title + "&page=1&include_adult=false")
-		.then(response => response.json())
-		.then((responseJson) => {
-			this.setState({ results2: responseJson.results2 });
-
- 	searchByTitle() {
+ 	searchByYear() {
 
 		const key = "706733eb15b955d867b9853c3b840e78";
 
@@ -103,7 +101,6 @@ import ResultsList from './ResultsList.js';
 
 		    	<SearchForm searchByYear={this.searchByYear} handleYearChange={this.handleYearChange} searchByTitle={this.searchByTitle} handleTitleChange={this.handleTitleChange}/>
 
-		    	<SearchForm searchByMovie={this.searchByMovie} handleYearChange={this.handleYearChange} handleActorChange={this.handleActorChange} handleGenreChange={this.handleGenreChange} searchByTitle={this.searchByTitle}/>
 
 		    	<ResultsList results={this.state.results} />
 		    </div>
