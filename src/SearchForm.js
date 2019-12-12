@@ -1,49 +1,83 @@
 import React, {Component} from "react";
-// import "movieSearch";
-
+//import App from './App.js';
 
 
 class SearchForm extends Component {
 	constructor(props) {
 		super(props);
 
+
 		this.handleYearChange = this.handleYearChange.bind(this);
 		this.handleSearch = this.handleSearch.bind(this);
+		this.handleTitleChange = this.handleTitleChange.bind(this);
 	}
+
+
 
 	handleSearch() {
 
-		if(this.props.title === ""){
-			console.log(this.props.title);
-		}
-		else{
-			console.log(this.props.title);
-		}
+		// console.log(this.props.title);
+		// this.props.searchByTitle();
 
+		// if(this.props.title === ""){
+		// 	console.log(this.props.title);
+		// 	this.props.searchByYear();
+		// }
+		// else{
+		// 	//console.log(this.props.title);
+		// 	this.props.searchByTitle();
+		// }
 
-		// this.props.searchByYear();
+		//console.log(this.props.title);
+		this.props.searchByYear();
+		//this.props.searchByTitle();
+	}
+	handleSearch2() {
+
+		// console.log(this.props.title);
+		// this.props.searchByTitle();
+
+		// if(this.props.title === ""){
+		// 	console.log(this.props.title);
+		// 	this.props.searchByYear();
+		// }
+		// else{
+		// 	//console.log(this.props.title);
+		// 	this.props.searchByTitle();
+		// }
+
+		//console.log(this.props.title);
+		this.props.searchByTitle();
+		//this.props.searchByTitle();
 	}
 
-	handleYearChange(e) {
-		this.props.handleYearChange(e.target.value);
-	}
+		handleYearChange(e) {
+			this.props.handleYearChange(e.target.value);
+			console.log(e.target.value);
+		};
 
-	handleTitleChange(e) {
-		this.props.handleTitleChange(e.target.value);
-	}
+		handleTitleChange(e) {
+			this.props.handleTitleChange(e.target.value);
+			console.log(e.target.value);
+		};
+	// handleActorChange(e) {
+	// 	this.props.handleActorChange(e.target.value);
+	// }
 
-	handleActorChange(e) {
-		this.props.handleActorChange(e.target.value);
-	}
+	// handleGenreChange(e) {
+	// 	this.props.handleGenreChange(e.target.value);
+	// }
 
 	render() {
+
 		return(
 
 			<form onSubmit={e => { e.preventDefault(); }} id="search-form" className="form">
 				<div className="form-group title-group">
 					<label htmlFor="title">Title:</label>
-					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
+					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" value="Avengers" placeholder="e.g. Avengers"/>
 				</div>
+				<button onClick={this.handleSearch2} type="button" id="search" className="btn btn-primary">Search</button>
 				<div className="or">Or</div>
 				<br/>
 				<div className="form-group genre-group">
@@ -95,7 +129,6 @@ class SearchForm extends Component {
 			</form>
 		);
 	}
-
 }
 
 export default SearchForm;

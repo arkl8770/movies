@@ -17,6 +17,9 @@ import ResultsList from './ResultsList.js';
 
  		this.searchByYear = this.searchByYear.bind(this);
  		this.handleYearChange = this.handleYearChange.bind(this);
+
+ 		this.searchByTitle = this.searchByTitle.bind(this);
+ 		this.handleTitleChange = this.handleTitleChange.bind(this);
  	}
 
  	searchByYear() {
@@ -37,13 +40,15 @@ import ResultsList from './ResultsList.js';
 		// console.log(this.state.results);
 	}
 
-	searchByMovie() {
+	searchByTitle() {
 
 		const key = "706733eb15b955d867b9853c3b840e78";
-		fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
+
+		fetch("https://api.themoviedb.org/3/search/movie?api_key=" + key + "&language=en-US&query=" + this.state.title + "&page=1&include_adult=false")
 		.then(response => response.json())
 		.then((responseJson) => {
-			this.setState({ results: responseJson.results });
+			this.setState({ results2: responseJson.results2 });
+			// console.log(responseJson.results);
 		})
 		.catch(error => console.log(error));
 	}
@@ -62,9 +67,9 @@ import ResultsList from './ResultsList.js';
 		this.setState({ title: title });
 	}
 
-	handleActorChange(actor) {
-		this.setState({ actor: actor });
-	}
+	// handleActorChange(actor) {
+	// 	this.setState({ actor: actor });
+	// }
  	render() {
 		return (
 		    <div className="App">
@@ -72,7 +77,7 @@ import ResultsList from './ResultsList.js';
 		    		<h1>Welcome to Movie Matchmaker.</h1>
 		    	</header>
 
-		    	<SearchForm searchByYear={this.searchByYear} handleYearChange={this.handleYearChange} />
+		    	<SearchForm searchByYear={this.searchByYear} handleYearChange={this.handleYearChange} searchByTitle={this.searchByTitle} handleTitleChange={this.handleTitleChange}/>
 
 		    	<ResultsList results={this.state.results} />
 		    </div>

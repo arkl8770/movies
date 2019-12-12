@@ -29,9 +29,15 @@ class Result extends Component {
 			fontSize: ".8em"
 		}
 		return(
-			<div style={resultStyle} className="result">
-				<div style={overviewStyle}>{this.props.overview}</div>
-				<div style={titleStyle}>{this.props.title}</div>
+			<div>
+				<div style={resultStyle} className="result">
+					<div style={overviewStyle}>{this.props.overview}</div>
+					<div style={titleStyle}>{this.props.title}</div>
+				</div>
+				<div style={resultStyle} className="result2">
+					<div style={overviewStyle}>{this.props.overview}</div>
+					<div style={titleStyle}>{this.props.title}</div>
+				</div>
 			</div>
 		);
 	}
