@@ -6,13 +6,19 @@ class SearchForm extends Component {
 	constructor(props) {
 		super(props);
 
+
 		this.handleYearChange = this.handleYearChange.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
-		this.handleTitleSearch = this.handleTitleSearch.bind(this);
-		this.handleDiscoverSearch = this.handleDiscoverSearch.bind(this);
 		this.handleGenreChange = this.handleGenreChange.bind(this);
 		this.handleRatingChange = this.handleRatingChange.bind(this);
+
+		this.handleTitleSearch = this.handleTitleSearch.bind(this);
+		this.handleDiscoverSearch = this.handleDiscoverSearch.bind(this);
+
 	};
+
+	}
+
 
 	handleGenreChange(e) {
 		this.props.handleGenreChange(e.target.value);
@@ -23,29 +29,23 @@ class SearchForm extends Component {
 
 	}
 
-
 	handleTitleSearch() {
 		this.props.searchByTitle();
 	}
 
-		handleYearChange(e) {
-			console.log(e);
-			this.props.handleYearChange(e.target.value);
-			console.log(e.target.value);
-		};
 
-		handleTitleChange(e) {
-			this.props.handleTitleChange(e.target.value);
-			console.log(e.target.value);
-		};
+	handleYearChange(e) {
+		this.props.handleYearChange(e.target.value);
+	};
 
-		handleRatingChange(e) {
-			console.log(e);
-			this.props.handleRatingChange(e.target.value);
-			console.log(e.target.value);
-		};
+	handleTitleChange(e) {
+		this.props.handleTitleChange(e.target.value);
+		console.log(e.target.value);
+	};
 
-
+	handleRatingChange(e) {
+		this.props.handleRatingChange(e.target.value);
+	}
 
 	render() {
 
@@ -81,9 +81,10 @@ class SearchForm extends Component {
 						<option value="10751">Family</option>
 					</select>
 				</div>
-				<div className="form-group year-group">
-					<label htmlFor="voteAverage">Rating:</label>
-					<input onChange={this.handleRatingChange} type="number" className="form-control" id="voteAverage" max="10" min="0" placeholder="e.g. 10" />
+				<div className="form-group rating-group">
+					<label htmlFor="rating">Rating: (0 - 10)</label>
+					<input onChange={this.handleRatingChange} type="number" className="form-control" id="Rating" min="0" max="10"/>
+
 				</div>
 				<div className="form-group year-group">
 					<label htmlFor="yearOfRelease">Year of Release:</label>

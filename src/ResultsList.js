@@ -15,6 +15,20 @@ class ResultsList extends Component {
 	    }
 
 		return(
+<<<<<<< HEAD
+			<div id="results">
+				<header className="header">
+					<h3>Results</h3>
+				</header>
+				<ul style={listStyle}>
+					{this.props.results.map(result => 
+						<li key={result.id}>
+							<Result title={result.title} overview={result.overview} backdrop={result.backdrop_path}/>
+						</li>
+					)}
+				</ul>
+			</div>
+=======
 				<div id="results">
 					<header className="header">
 						<h3>Results</h3>
@@ -27,6 +41,7 @@ class ResultsList extends Component {
 						)}
 					</ul>
 				</div>
+>>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
 
 		);
 	}
