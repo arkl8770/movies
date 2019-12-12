@@ -180,6 +180,8 @@ import ResultsList from './ResultsList.js';
 
 		    	title={this.state.title}
 		    	actor={this.state.actor} />
+				<a className="sourceCode" href="https://github.com/arkl8770/movies">Source Code</a>
+
 
 
 		    	<ResultsList results={this.state.results} />
