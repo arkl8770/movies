@@ -17,14 +17,22 @@ import ResultsList from './ResultsList.js';
  		};
 
  		this.searchByTitle = this.searchByTitle.bind(this);
+
+ 		this.searchByYear = this.searchByYear.bind(this);
+
  		this.discoverSearch = this.discoverSearch.bind(this);
+
 
  		this.handleTitleChange = this.handleTitleChange.bind(this);
  		this.handleYearChange = this.handleYearChange.bind(this);
  		this.handleActorChange = this.handleActorChange.bind(this);
  		this.handleGenreChange = this.handleGenreChange.bind(this);
  	}
+		//fetch("https://api.themoviedb.org/3/search/movie?api_key=", key, "&language=en-US&query=", this.state.movie ,"&page=1&include_adult=false")
 
+
+
+ 	searchByYear() {
 	searchByTitle() {
 
 
@@ -124,8 +132,10 @@ import ResultsList from './ResultsList.js';
 		    	searchByTitle={this.searchByTitle} 
 		    	discoverSearch={this.discoverSearch} 
 
+
 		    	title={this.state.title}
 		    	actor={this.state.actor}/>
+
 
 		    	<ResultsList results={this.state.results} />
 		    </div>

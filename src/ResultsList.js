@@ -13,8 +13,8 @@ class ResultsList extends Component {
 	    	listStyleType: "none",
 	    	justifyContent: "space-evenly"
 	    }
+
 		return(
-			<div>
 				<div id="results">
 					<header className="header">
 						<h3>Results</h3>
@@ -27,6 +27,7 @@ class ResultsList extends Component {
 						)}
 					</ul>
 				</div>
+
 			</div>
 		);
 	}
