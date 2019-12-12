@@ -55,7 +55,7 @@ import ResultsList from './ResultsList.js';
 	}
 
  	discoverSearch() {
- 		if (this.state.genre !== 0 || this.state.rating !== 0 || this.state.year != 0) {
+ 		if (this.state.genre !== 0 || this.state.rating !== 0 || this.state.year !== 0) {
 
 			const key = "706733eb15b955d867b9853c3b840e78";
 		 	var year = false;

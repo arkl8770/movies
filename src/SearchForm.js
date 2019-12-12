@@ -6,11 +6,6 @@ class SearchForm extends Component {
 	constructor(props) {
 		super(props);
 
-<<<<<<< HEAD
-=======
-		//this.handleSearch = this.handleSearch.bind(this);
-		//this.handleSearch2 = this.handleSearch2.bind(this);
->>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
 		this.handleYearChange = this.handleYearChange.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.handleGenreChange = this.handleGenreChange.bind(this);
@@ -28,10 +23,7 @@ class SearchForm extends Component {
 		this.props.discoverSearch();
 
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
 	handleTitleSearch() {
 		this.props.searchByTitle();
 	}
@@ -58,10 +50,7 @@ class SearchForm extends Component {
 					<label htmlFor="title">Title:</label>
 					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
 				</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
 				<button onClick={this.handleTitleSearch} type="button" id="search" className="btn btn-primary">Search</button>
 				<div className="or">- Or -</div>
 				<br/>
