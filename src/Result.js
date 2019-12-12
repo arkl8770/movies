@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
+import myImage from '../src/noImage.png';
 
 class Result extends Component {
 	render() {
 		var imageUrl;
 		if(this.props.backdrop === null)
 		{
-			imageUrl = '../public/noImage.png';
+			imageUrl = myImage;
 		}
 		else
 		{
