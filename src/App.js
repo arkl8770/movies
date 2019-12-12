@@ -17,12 +17,9 @@ import ResultsList from './ResultsList.js';
  		};
 
  		this.searchByTitle = this.searchByTitle.bind(this);
-<<<<<<< HEAD
-=======
 
  		//this.searchByYear = this.searchByYear.bind(this);
 
->>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
  		this.discoverSearch = this.discoverSearch.bind(this);
 
 
@@ -32,17 +29,14 @@ import ResultsList from './ResultsList.js';
  		this.handleGenreChange = this.handleGenreChange.bind(this);
  	}
 
-<<<<<<< HEAD
-=======
 
  	//searchByYear() {
->>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
 	searchByTitle() {
 		if (this.state.title !== "") {
 			const key = "706733eb15b955d867b9853c3b840e78";
-			fetch("https://api.themoviedb.org/3/search/movie?api_key=" +  
+			fetch("https://api.themoviedb.org/3/search/movie?api_key=" +
 				key +
-				"&language=en-US&query=" + 
+				"&language=en-US&query=" +
 				this.state.title +
 				"&page=1&include_adult=false"
 			)
@@ -73,12 +67,12 @@ import ResultsList from './ResultsList.js';
 			}
 	 		if (this.state.year !== 0) {
 				year = true;
-			} 
+			}
 			if (this.state.rating !== 0) {
 	 			rating = true;
-	 		} 
+	 		}
 
-	 		var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + 
+	 		var url = "https://api.themoviedb.org/3/discover/movie?api_key=" +
 				key +
 				"&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
 
@@ -100,11 +94,11 @@ import ResultsList from './ResultsList.js';
 			})
 			.catch(error => console.log(error));
 	 	}
- 		
+
 	}
 
 	handleYearChange(year) {
-		this.setState({ year: year });	
+		this.setState({ year: year });
 	}
 
 	handleTitleChange(title) {
@@ -127,14 +121,14 @@ import ResultsList from './ResultsList.js';
 		    	</header>
 
 
-		    	<SearchForm 
+		    	<SearchForm
 		    	handleTitleChange={this.handleTitleChange}
 		    	handleRatingChange={this.handleRatingChange}
-		    	handleYearChange={this.handleYearChange} 
+		    	handleYearChange={this.handleYearChange}
 		    	handleGenreChange={this.handleGenreChange}
 
-		    	searchByTitle={this.searchByTitle} 
-		    	discoverSearch={this.discoverSearch} 
+		    	searchByTitle={this.searchByTitle}
+		    	discoverSearch={this.discoverSearch}
 
 
 		    	title={this.state.title}
