@@ -17,7 +17,7 @@ class ResultsList extends Component {
 		return(
 
 				<div id="results">
-					<header className="header">
+					<header id="header2">
 						<h3>Results</h3>
 					</header>
 					<ul style={listStyle}>
