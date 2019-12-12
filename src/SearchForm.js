@@ -12,9 +12,12 @@ class SearchForm extends Component {
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.handleTitleSearch = this.handleTitleSearch.bind(this);
 		this.handleDiscoverSearch = this.handleDiscoverSearch.bind(this);
+		this.handleGenreChange = this.handleGenreChange.bind(this);
 	}
 
-
+	handleGenreChange(e) {
+		this.props.handleGenreChange(e.target.value);
+	}
 
 	handleDiscoverSearch() {
 		this.props.discoverSearch();
@@ -38,9 +41,9 @@ class SearchForm extends Component {
 	// 	this.props.handleActorChange(e.target.value);
 	// }
 
-	// handleGenreChange(e) {
-	// 	this.props.handleGenreChange(e.target.value);
-	// }
+	handleGenreChange(e) {
+		this.props.handleGenreChange(e.target.value);
+	}
 
 	render() {
 
@@ -57,7 +60,7 @@ class SearchForm extends Component {
 				<br/>
 				<div className="form-group genre-group">
 					<label htmlFor="genre">Genre:</label>
-					<select className="form-control" id="genre" disabled>
+					<select onChange={this.handleGenreChange} className="form-control" id="genre">
 						<option value="">Choose a genre...</option>
 						<option value="35">Comedy</option>
 						<option value="878">Sci-Fi</option>
