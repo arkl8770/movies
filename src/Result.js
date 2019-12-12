@@ -4,9 +4,9 @@ import './App.css';
 class Result extends Component {
 	render() {
 		var imageUrl;
-		if(this.props.backdrop === "null")
+		if(this.props.backdrop === null)
 		{
-			imageUrl = "noImage.png";
+			imageUrl = '../public/noImage.png';
 		}
 		else
 		{
