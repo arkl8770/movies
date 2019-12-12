@@ -16,18 +16,18 @@ class ResultsList extends Component {
 
 		return(
 
-			<div id="results">
-				<header className="header">
-					<h3>Results</h3>
-				</header>
-				<ul style={listStyle}>
-					{this.props.results.map(result => 
-						<li key={result.id}>
-							<Result title={result.title} overview={result.overview} backdrop={result.backdrop_path}/>
-						</li>
-					)}
-				</ul>
-			</div>
+				<div id="results">
+					<header className="header">
+						<h3>Results</h3>
+					</header>
+					<ul style={listStyle}>
+						{this.props.results.map(result =>
+							<li key={result.id}>
+								<Result title={result.title} overview={result.overview} backdrop={result.backdrop_path}/>
+							</li>
+						)}
+					</ul>
+				</div>
 
 
 		);
