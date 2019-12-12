@@ -167,7 +167,7 @@ import ResultsList from './ResultsList.js';
 		    		<h1>Welcome to Movie Matchmaker.</h1>
 		    	</header>
 
-
+		    	<div className="find"><h3>Find a Movie</h3></div>
 		    	<SearchForm
 		    	handleTitleChange={this.handleTitleChange}
 		    	handleRatingChange={this.handleRatingChange}

@@ -1,17 +1,99 @@
-.header {
-  text-align: center;
+html, body
+{
+	background-color: black;
+	color: white;
+	background-color: #121212;
 }
 
+label, .or, .find
+{
+	font-weight: bolder;
+}
 .App {
-  margin: 0 20px;
+  margin: 0px;
+}
+
+.or {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: large;
+}
+
+.header
+{
+	text-align: center;
+	padding-top: 270px;
+  	padding-bottom: 270px;
+  	animation-name: intro;
+  	animation-duration: 3s;
+  	animation-iteration-count: 3;
+  	animation-delay: 0s;
+  	background-color: black;
+  	margin: 2%;
+  	border-radius: 20px;
+}
+@keyframes intro {
+	0%   {background-color: white; opacity: 0;}
+  	100% {background-color: black; color: white; opacity: 1;}
+}
+
+header h1 {
+  	animation-name: text;
+  	animation-duration: 3s;
+  	animation-iteration-count: 1;
+}
+@keyframes text {
+    0%   {color: black; }
+  	100% {color: white; }
+}
+
+.find
+{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+	border-bottom: 2px solid white;
+	
+}
+
+.form
+{
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 60px;
+	background-color: #121212;
+	width: 100vw;
+	margin-bottom: 60px;
+}
+
+.movieResults
+{
+	padding: 5px;
+	/*border: 2px solid red;*/
+	border-radius: 5px;
+}
+
+#header2
+{
+	text-align: center;
+	margin-bottom: 40px;
+	padding-bottom: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+	border-bottom: 2px solid white;
+}
+
+#results
+{
+	margin-left: 2%;
+	margin-right: 2%;
 }
 
 @media screen and (min-width: 1000px) {
 	ul {
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr !important;
 	}
-}
-
-.or {
-	text-align: center;
 }
