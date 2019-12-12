@@ -182,7 +182,6 @@ import ResultsList from './ResultsList.js';
 		    	actor={this.state.actor} />
 				<a className="sourceCode" target="_blank" href="https://github.com/arkl8770/movies">Source Code</a>
 
-
 		    	<ResultsList results={this.state.results} />
 		    </div>
 		);
