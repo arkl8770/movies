@@ -9,11 +9,14 @@ label, .or, .find
 {
 	font-weight: bolder;
 }
-.App {
+
+.App 
+{
   margin: 0px;
 }
 
-.or {
+.or 
+{
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -26,26 +29,27 @@ label, .or, .find
 	padding-top: 270px;
   	padding-bottom: 270px;
   	animation-name: intro;
-  	animation-duration: 3s;
-  	animation-iteration-count: 3;
+  	animation-duration: 8s;
+  	animation-iteration-count: 1;
   	animation-delay: 0s;
   	background-color: black;
   	margin: 2%;
   	border-radius: 20px;
 }
 @keyframes intro {
-	0%   {background-color: white; opacity: 0;}
-  	100% {background-color: black; color: white; opacity: 1;}
+	0%   { background-color: white; opacity: 0;}
+  	100% { background-color: black; color: white; opacity: 1;}
 }
 
-header h1 {
+header h1 
+{
   	animation-name: text;
-  	animation-duration: 3s;
+  	animation-duration: 7s;
   	animation-iteration-count: 1;
 }
 @keyframes text {
-    0%   {color: black; }
-  	100% {color: white; }
+    0%   { color: black; }
+  	100% { color: white; }
 }
 
 .find
@@ -56,7 +60,25 @@ header h1 {
 	margin-left: 5%;
 	margin-right: 5%;
 	border-bottom: 2px solid white;
-	
+	animation: 
+		typing 6s steps(100, end);
+	/*animation-delay: 7s;*/
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 90%; }
+}
+
+.find h3
+{
+	animation-name: appear;
+  	animation-duration: 8s;
+  	animation-iteration-count: 1;
+}
+@keyframes appear {
+    0% 	 { color: #121212; }
+    90%  { color: #121212; }
+  	100% { color: white; }
 }
 
 .form
