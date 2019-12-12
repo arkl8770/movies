@@ -6,8 +6,8 @@ class SearchForm extends Component {
 	constructor(props) {
 		super(props);
 
-		this.handleSearch = this.handleSearch.bind(this);
-		this.handleSearch2 = this.handleSearch2.bind(this);
+		//this.handleSearch = this.handleSearch.bind(this);
+		//this.handleSearch2 = this.handleSearch2.bind(this);
 		this.handleYearChange = this.handleYearChange.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
 		this.handleTitleSearch = this.handleTitleSearch.bind(this);
@@ -20,20 +20,7 @@ class SearchForm extends Component {
 		this.props.discoverSearch();
 
 	}
-	handleSearch2() {
-		console.log("in search 2");
-		// console.log(this.props.title);
-		// this.props.searchByTitle();
 
-		// if(this.props.title === ""){
-		// 	console.log(this.props.title);
-		// 	this.props.searchByYear();
-		// }
-		// else{
-		// 	//console.log(this.props.title);
-		// 	this.props.searchByTitle();
-		// }
-		console.log(this.props.title);
 	handleTitleSearch() {
 		this.props.searchByTitle();
 	}
@@ -64,9 +51,7 @@ class SearchForm extends Component {
 					<label htmlFor="title">Title:</label>
 					<input onChange={this.handleTitleChange} type="text" className="form-control" id="movieTitle" placeholder="e.g. Avengers"/>
 				</div>
-				<button onClick={this.handleSearch2} type="button" id="search" className="btn btn-primary">Search</button>
 
-				<div className="or">Or</div>
 				<button onClick={this.handleTitleSearch} type="button" id="search" className="btn btn-primary">Search</button>
 				<div className="or">- Or -</div>
 				<br/>

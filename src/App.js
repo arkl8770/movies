@@ -17,7 +17,7 @@ import ResultsList from './ResultsList.js';
 
  		this.searchByTitle = this.searchByTitle.bind(this);
 
- 		this.searchByYear = this.searchByYear.bind(this);
+ 		//this.searchByYear = this.searchByYear.bind(this);
 
  		this.discoverSearch = this.discoverSearch.bind(this);
 
@@ -31,7 +31,7 @@ import ResultsList from './ResultsList.js';
 
 
 
- 	searchByYear() {
+ 	//searchByYear() {
 	searchByTitle() {
 
 
@@ -58,13 +58,14 @@ import ResultsList from './ResultsList.js';
  		if (this.state.year != "") {
  			year = true;
  		} 
+		const key = "706733eb15b955d867b9853c3b840e78";
+ 		
 
  		var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + 
 			key +
 			"&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
 		console.log(url);
 
-		const key = "706733eb15b955d867b9853c3b840e78";
 
 		fetch("https://api.themoviedb.org/3/discover/movie?api_key=" + 
 			key +
