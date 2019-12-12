@@ -9,29 +9,16 @@ class SearchForm extends Component {
 		this.handleSearch = this.handleSearch.bind(this);
 		this.handleSearch2 = this.handleSearch2.bind(this);
 		this.handleYearChange = this.handleYearChange.bind(this);
-		this.handleSearch = this.handleSearch.bind(this);
 		this.handleTitleChange = this.handleTitleChange.bind(this);
+		this.handleTitleSearch = this.handleTitleSearch.bind(this);
+		this.handleDiscoverSearch = this.handleDiscoverSearch.bind(this);
 	}
 
 
 
-	handleSearch() {
+	handleDiscoverSearch() {
+		this.props.discoverSearch();
 
-		// console.log(this.props.title);
-		// this.props.searchByTitle();
-
-		// if(this.props.title === ""){
-		// 	console.log(this.props.title);
-		// 	this.props.searchByYear();
-		// }
-		// else{
-		// 	//console.log(this.props.title);
-		// 	this.props.searchByTitle();
-		// }
-
-		//console.log(this.props.title);
-		this.props.searchByYear();
-		//this.props.searchByTitle();
 	}
 	handleSearch2() {
 		console.log("in search 2");
@@ -47,8 +34,8 @@ class SearchForm extends Component {
 		// 	this.props.searchByTitle();
 		// }
 		console.log(this.props.title);
+	handleTitleSearch() {
 		this.props.searchByTitle();
-		//this.props.searchByTitle();
 	}
 
 		handleYearChange(e) {
@@ -80,6 +67,8 @@ class SearchForm extends Component {
 				<button onClick={this.handleSearch2} type="button" id="search" className="btn btn-primary">Search</button>
 
 				<div className="or">Or</div>
+				<button onClick={this.handleTitleSearch} type="button" id="search" className="btn btn-primary">Search</button>
+				<div className="or">- Or -</div>
 				<br/>
 				<div className="form-group genre-group">
 					<label htmlFor="genre">Genre:</label>
@@ -112,7 +101,7 @@ class SearchForm extends Component {
 				</div>
 
 
-				<button onClick={this.handleSearch} type="button" id="search" className="btn btn-primary">Search</button>
+				<button onClick={this.handleDiscoverSearch} type="button" id="search" className="btn btn-primary">Search</button>
 			</form>
 		);
 	}

@@ -27,6 +27,8 @@ class ResultsList extends Component {
 						)}
 					</ul>
 				</div>
+
+			</div>
 		);
 	}
 
