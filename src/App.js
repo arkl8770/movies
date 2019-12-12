@@ -52,53 +52,57 @@ import ResultsList from './ResultsList.js';
 	}
 
  	discoverSearch() {
+// <<<<<<< HEAD
 
 
- 		var year = false;
- 		var rating = false;
- 		var genre = false;
+//  		var year = false;
+//  		var rating = false;
+//  		var genre = false;
 
-		if (this.state.genre !== 0) {
- 			genre = true
- 		}
- 		if (this.state.year !== "") {
- 			year = true;
- 		} 
- 		if (this.state.rating !== "") {
- 			rating = true;
- 		} 
-
-
- 		const key = "706733eb15b955d867b9853c3b840e78";
+// 		if (this.state.genre !== 0) {
+//  			genre = true
+//  		}
+//  		if (this.state.year !== "") {
+//  			year = true;
+//  		} 
+//  		if (this.state.rating !== "") {
+//  			rating = true;
+//  		} 
 
 
- 		var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + 
-			key +
-			"&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+//  		const key = "706733eb15b955d867b9853c3b840e78";
 
-		if (genre === true) {
-			url += "&with_genres=" + this.state.genre;
-		}
-		if (rating === true) {
-			url += "&vote_average.gte=" + this.state.rating;
-		}
-		if (year === true) {
-			url += "&year=" + this.state.year;
-		}
 
-		alert(url);
+//  		var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + 
+// 			key +
+// 			"&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
 
-		fetch(url)
-		.then(response => response.json())
-		.then((responseJson) => {
-			this.setState({ results: responseJson.results });
+// 		if (genre === true) {
+// 			url += "&with_genres=" + this.state.genre;
+// 		}
+// 		if (rating === true) {
+// 			url += "&vote_average.gte=" + this.state.rating;
+// 		}
+// 		if (year === true) {
+// 			url += "&year=" + this.state.year;
+// 		}
 
-			// console.log(responseJson.results);
-		})
-		.catch(error => console.log(error));
+// 		alert(url);
 
-		console.log(this.state.results);
- 		if (this.state.genre !== 0 || this.state.rating !== 0 || this.state.year != 0) {
+// 		fetch(url)
+// 		.then(response => response.json())
+// 		.then((responseJson) => {
+// 			this.setState({ results: responseJson.results });
+
+// 			// console.log(responseJson.results);
+// 		})
+// 		.catch(error => console.log(error));
+
+// 		console.log(this.state.results);
+//  		if (this.state.genre !== 0 || this.state.rating !== 0 || this.state.year != 0) {
+// =======
+ 		if (this.state.genre !== 0 || this.state.rating !== 0 || this.state.year !== 0) {
+
 
 			const key = "706733eb15b955d867b9853c3b840e78";
 		 	var year = false;
