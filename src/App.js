@@ -12,7 +12,8 @@ import ResultsList from './ResultsList.js';
  			results: [],
  			year: 0,
  			title: "",
- 			actor: ""
+ 			actor: "",
+ 			genre: ""
  		};
 
  		this.searchByTitle = this.searchByTitle.bind(this);
@@ -46,22 +47,35 @@ import ResultsList from './ResultsList.js';
  	discoverSearch() {
 
  		var year = false;
+ 		var actor = false;
+ 		var genre = false;
 
+		if (this.state.genre != 0) {
+ 			genre = true
+ 		}
  		if (this.state.year != "") {
  			year = true;
  		} 
+ 		if (this.state.actor != "") {
+ 			actor = true;
+ 		} 
+
+ 		const key = "706733eb15b955d867b9853c3b840e78";
+
 
  		var url = "https://api.themoviedb.org/3/discover/movie?api_key=" + 
 			key +
 			"&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
-		console.log(url);
 
-		const key = "706733eb15b955d867b9853c3b840e78";
+		if (genre === true) {
+			url += "&with_genres=" + this.state.genre;
+		}
+		if (year === true) {
+			url += "&year=" + this.state.year;
+		}
+		alert(url);
 
-		fetch("https://api.themoviedb.org/3/discover/movie?api_key=" + 
-			key +
-			"&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=" +
-			this.state.year)
+		fetch(url)
 		.then(response => response.json())
 		.then((responseJson) => {
 			this.setState({ results: responseJson.results });
@@ -90,7 +104,7 @@ import ResultsList from './ResultsList.js';
 	}
 
 	handleGenreChange(genre) {
-		this.stateState({ genre: genre });
+		this.setState({ genre: genre });
 	}
 
  	render() {
@@ -105,6 +119,7 @@ import ResultsList from './ResultsList.js';
 		    	handleTitleChange={this.handleTitleChange}
 		    	handleActorChange={this.handleActorChange}
 		    	handleYearChange={this.handleYearChange} 
+		    	handleGenreChange={this.handleGenreChange}
 
 		    	searchByTitle={this.searchByTitle} 
 		    	discoverSearch={this.discoverSearch} 
