@@ -17,7 +17,7 @@ class SearchForm extends Component {
 
 	};
 
-	}
+}
 
 
 	handleGenreChange(e) {
@@ -33,7 +33,6 @@ class SearchForm extends Component {
 		this.props.searchByTitle();
 	}
 
-
 	handleYearChange(e) {
 		this.props.handleYearChange(e.target.value);
 	};
@@ -46,6 +45,7 @@ class SearchForm extends Component {
 	handleRatingChange(e) {
 		this.props.handleRatingChange(e.target.value);
 	}
+
 
 	render() {
 
@@ -81,6 +81,7 @@ class SearchForm extends Component {
 						<option value="10751">Family</option>
 					</select>
 				</div>
+
 				<div className="form-group rating-group">
 					<label htmlFor="rating">Rating: (0 - 10)</label>
 					<input onChange={this.handleRatingChange} type="number" className="form-control" id="Rating" min="0" max="10"/>
