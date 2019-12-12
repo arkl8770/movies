@@ -17,6 +17,12 @@ import ResultsList from './ResultsList.js';
  		};
 
  		this.searchByTitle = this.searchByTitle.bind(this);
+<<<<<<< HEAD
+=======
+
+ 		//this.searchByYear = this.searchByYear.bind(this);
+
+>>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
  		this.discoverSearch = this.discoverSearch.bind(this);
 
 
@@ -26,6 +32,11 @@ import ResultsList from './ResultsList.js';
  		this.handleGenreChange = this.handleGenreChange.bind(this);
  	}
 
+<<<<<<< HEAD
+=======
+
+ 	//searchByYear() {
+>>>>>>> 03ea5820e28144c5d5edf36622989b6f336a6c31
 	searchByTitle() {
 		if (this.state.title !== "") {
 			const key = "706733eb15b955d867b9853c3b840e78";
